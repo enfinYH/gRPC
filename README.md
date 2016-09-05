@@ -1,7 +1,6 @@
 # gRPC
 iOS端集成gRPC的必要环境
 
-###next, 这时候就要安装 grpc、protobuf 以及各种插件了，从网上找的资料中大部分都是这块内容，过程反复也不甚清楚，有些甚至都走不通。总结了下，[下载地址](https://github.com/enfinYH/gRPC.git)
 
 ###下载好后的样子：
 
