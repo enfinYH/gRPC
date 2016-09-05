@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option java_multiple_files = false;
+option java_package = "com.cmcc.im.proto";
+option java_outer_classname = "Chat";
+
+package chat;
+
+message SendP2PMessageRequest
+{
+	string from_uid = 1;
+	string from_nickname = 2;
+	string to_uid = 3;
+	int32 type = 4;
+	bytes data = 5;
+}
+
+
+message SendP2PMessageResponse
+{
+	int32 ret= 1;//==0返回成功，see ECocoErrorcode, 1==数据库异常; 失败需要客户端延迟5秒后重试
+	uint64 srvtime = 2;//unit is millisecond,server time
+	bool to_uid_online = 100;
+}
+
+service P2PChatService
+{
+	rpc SendP2P(SendP2PMessageRequest) returns (SendP2PMessageResponse);
+	rpc SendP2PWhz(SendP2PMessageRequest) returns (SendP2PMessageRequest);
+}

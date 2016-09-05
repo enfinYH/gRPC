@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "com.cmcc.im.proto";
+option java_outer_classname = "NotificationProto";
+
+package ntf;
+
+service Notification {
+	rpc SendNtf(Init) returns(stream NtfInfo) {}
+}
+
+message Init {
+	string account = 1;
+}
+
+message NtfInfo {
+	string to_account = 1;
+	int32 ntf_type = 2;
+	bytes data = 3;
+}

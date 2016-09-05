@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_multiple_files = false;
+option java_package = "com.cmcc.im.proto";
+option java_outer_classname = "Auth";
+
+package auth;
+
+message UserAuthRequest
+{
+	string account = 1;
+	int32 passwd_type = 2;
+	string passwd = 3;
+}
+
+message UserAuthResponse
+{
+	int32 ret = 1;
+}
+
+service AuthService
+{
+	rpc	LoginRequest(UserAuthRequest) returns (UserAuthResponse);
+}
