@@ -1,2 +1,2 @@
 # gRPC
-iOS端集成gPRC的必要环境
+iOS端集成gRPC的必要环境
