@@ -10,6 +10,7 @@ iOS端集成gRPC的必要环境
 - 把<fileName>.podspec改名为TestEnd.podspec，打开该文件，第二行改为s.name     = "TestEnd"，保存并关闭。
 - 打开Podfile文件，把里面的<fileName>都替换为TestEnd，保存并关闭。
 - 打开Protos这个文件夹，这里存放的是需要的.proto文件，不可缺少，否则安装时报错。现在这里放了几个我们生成的文件。
+
 ####（注：官方DEMO中的grpc.podspec中指向的boringSSL实测是下不来的，可能跟在国内有关，故换成openSSL-for-ios） 
 
 ###好了，准备工作做完了，打开终端，cd到工程目录下，执行
